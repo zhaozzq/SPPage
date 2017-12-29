@@ -15,8 +15,6 @@
 
 @interface SPTabController () <SPPageControllerDelegate, SPPageControllerDataSource, SPTabDataSource, SPTabDelegate>
 
-@property (nonatomic, strong) UIView *tabView;
-
 @property (nonatomic, strong) SPPageController *pageController;
 
 @property (nonatomic, assign) CGFloat tabViewTop;

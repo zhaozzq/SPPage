@@ -32,7 +32,7 @@
     [self.view addSubview:self.tableView];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.estimatedRowHeight= 0.0f;
+    self.tableView.estimatedRowHeight = 0.0f;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

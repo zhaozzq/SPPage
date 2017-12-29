@@ -40,11 +40,9 @@
     self.backgroundColor = [UIColor clearColor];
     self.scrollsToTop = NO;
     
-#ifdef __IPHONE_11_0
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 11.0) {// ios11 苹果加了一个安全区域 会自动修改scrollView的contentOffset
+    if (@available(iOS 11, *)) {// ios11 苹果加了一个安全区域 会自动修改scrollView的contentOffset
         self.contentInsetAdjustmentBehavior =  UIScrollViewContentInsetAdjustmentNever;
     }
-#endif
 }
 
 - (void)addSubview:(UIView *)view

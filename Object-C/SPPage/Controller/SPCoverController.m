@@ -39,6 +39,7 @@
     self.__coverView = [self preferCoverView];
     self.__coverView.frame = [self preferCoverFrame];
     [self.view addSubview:self.__coverView];
+    [self.view bringSubviewToFront:self.tabView];
 }
 
 - (void)reloadData

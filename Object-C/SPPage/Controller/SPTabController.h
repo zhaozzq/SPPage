@@ -17,6 +17,8 @@
 @property (nonatomic, assign) CGFloat maxYPullDown;//往下拉 tab的最大值
 @property (nonatomic, assign) CGFloat minYPullUp;//拉上拉 tab的最小值
 
+@property (nonatomic, strong) UIView *tabView;
+
 //单一tab 是否需要展示
 - (BOOL)preferSingleTabNotShow;
 
