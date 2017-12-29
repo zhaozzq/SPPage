@@ -10,6 +10,6 @@ Pod::Spec.new do |spec|
   spec.frameworks         = "UIKit"
   spec.ios.deployment_target = '7.0'
   spec.source             = { :git => "https://github.com/xichen744/SPPage.git", :tag => spec.version.to_s }
-  spec.source_files       = "Object-C/SPPage/*"
+  spec.source_files       = "Object-C/SPPage/**/*"
   spec.requires_arc       = true
 end
