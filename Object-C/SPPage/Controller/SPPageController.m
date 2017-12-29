@@ -689,14 +689,4 @@ typedef NS_ENUM(NSInteger,SPPageScrollDirection) {
     self.currentPageIndex = index;
 }
 
-+ (BOOL)iPhoneX
-{
-    static BOOL b;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        b = CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size);
-    });
-    return b;
-}
-
 @end

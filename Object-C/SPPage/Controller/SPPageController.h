@@ -11,8 +11,7 @@
 
 #define KSCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
 #define KSCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
-#define KSTATUSBARHEIGHT ([SPPageController iPhoneX]?44.0:20.0)
-#define KNAVIGATIONANDSTATUSBARHEIGHT (KSTATUSBARHEIGHT+44.0)
+#define KNAVIGATIONANDSTATUSBARHEIGHT ([UIApplication sharedApplication].statusBarFrame.size.height+[UINavigationBar appearance].frame.size.height)
 
 /**
  *
@@ -37,7 +36,5 @@
 - (NSInteger)indexOfController:(UIViewController *)vc;
 
 - (void)updateCurrentIndex:(NSInteger)index;
-
-+ (BOOL)iPhoneX;
 
 @end
