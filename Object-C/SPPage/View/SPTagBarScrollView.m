@@ -71,10 +71,17 @@
     for (int i=0;i<[self.tabDataSource numberOfTab];i++) {
         tabContentWidth += [self.tabDataSource respondsToSelector:@selector(tabWidthForIndex:)]?[self.tabDataSource tabWidthForIndex:i]:73;
     }
-    if ((tabContentWidth+2*preferTabOffset ) > self.frame.size.width) {
-        offset = preferTabOffset;
-    } else {
-        offset = (self.frame.size.width-tabContentWidth)/2.0;
+    CGFloat gap = 0;
+    offset = preferTabOffset;
+    
+    if ((tabContentWidth+2*preferTabOffset ) < self.frame.size.width) {
+        if ([self.tabDataSource respondsToSelector:@selector(numberOfTab)] && self.tabDataSource.numberOfTab > 1) {
+            gap = (self.frame.size.width-tabContentWidth - 2*preferTabOffset)/ (CGFloat)(self.tabDataSource.numberOfTab - 1);
+        }
+        else
+        {
+            offset = (self.frame.size.width-tabContentWidth)/2.0;
+        }
     }
 
 
@@ -98,9 +105,9 @@
 
         [self addSubview:titleView];
         [self.tagViewsCache addObject:titleView];
-        offset += tagWidth;
+        offset += tagWidth + gap;
     }
-
+    offset -= gap;
     [self reloadHighlight];
 
     self.contentSize = CGSizeMake(offset, self.frame.size.height);
